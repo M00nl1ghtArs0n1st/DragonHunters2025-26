@@ -119,28 +119,29 @@ public final class Constants {
         new Matter(new Translation3d(0, 0, Inches.of(8).in(Meters)), kRobotMass.in(Kilograms));
     // Robot moment of intertial; this can be obtained from a CAD model of your drivetrain. Usually,
     // this is between 3 and 8 kg*m^2.
-    public static final double kRobotMOI = 6.8; //TEST OR DIE
+    public static final double kRobotMOI = 6.8; // TEST OR DIE
 
     // Wheel coefficient of friction
-    public static final double kWheelCOF = 1.2; //test??????????????
+    public static final double kWheelCOF = 1.2; // test??????????????
 
     // Maximum torque applied by wheel
     // Kraken X60 stall torque ~7.09 Nm; MK4i L3 gear ratio 6.12:1
-    public static final double kMaxWheelTorque = 43.4; // Nm Mk5N TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+    public static final double kMaxWheelTorque =
+        43.4; // Nm Mk5N TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
 
     // Insert here the orientation (CCW == +) of the Rio and IMU from the robot
     // An angle of "0." means the x-y-z markings on the device match the robot's intrinsic reference
     //   frame.
     public static final Rotation3d kRioOrientation =
         switch (getRobot()) {
-          case COMPBOT -> new Rotation3d(0, 0, -90); //flip with this
+          case COMPBOT -> new Rotation3d(0, 0, -90); // flip with this
           case DEVBOT -> Rotation3d.kZero;
           default -> Rotation3d.kZero;
         };
     // IMU can be one of Pigeon2 or NavX
     public static final Rotation3d kIMUOrientation =
         switch (getRobot()) {
-          case COMPBOT -> Rotation3d.kZero; //same rotation as roborio
+          case COMPBOT -> Rotation3d.kZero; // same rotation as roborio
           case DEVBOT -> Rotation3d.kZero;
           default -> Rotation3d.kZero;
         };
@@ -220,10 +221,11 @@ public final class Constants {
     public static final RobotDeviceId FLYWHEEL_LEADER = new RobotDeviceId(16, CANBuses.RIO, 8);
     public static final RobotDeviceId FLYWHEEL_FOLLOWER = new RobotDeviceId(17, CANBuses.RIO, 9);
     public static final RobotDeviceId CONVEYOR_MOTOR = new RobotDeviceId(22, CANBuses.RIO, 10);
-    public static final RobotDeviceId TRANSFER_MOTOR = new RobotDeviceId(21, CANBuses.RIO, 11); // Button Switch ??
+    public static final RobotDeviceId TRANSFER_MOTOR =
+        new RobotDeviceId(21, CANBuses.RIO, 11); // Button Switch ??
     public static final RobotDeviceId INTAKE_ARM_LEADER = new RobotDeviceId(7, CANBuses.RIO, 12);
     public static final RobotDeviceId INTAKE_ARM_FOLLOWER = new RobotDeviceId(8, CANBuses.RIO, 13);
-    public static final RobotDeviceId INTAKE_POWER = new RobotDeviceId(20, CANBuses.RIO,12);
+    public static final RobotDeviceId INTAKE_POWER = new RobotDeviceId(20, CANBuses.RIO, 12);
     /* BEAM BREAK and/or LIMIT SWITCH DIO CHANNELS */
     // This is where digital I/O feedback devices are defined
     // Example:
@@ -266,7 +268,7 @@ public final class Constants {
     public static final int OPERATOR_SWITCH_0 = 8;
     public static final int OPERATOR_SWITCH_1 = 9;
     public static final int OPERATOR_SWITCH_2 = 10;
-    public static final int OPERATOR_SWITCH_3 = 11; //BUTTONNNNSSS YOOOOOOOOOOOOOOOOOOO
+    public static final int OPERATOR_SWITCH_3 = 11; // BUTTONNNNSSS YOOOOOOOOOOOOOOOOOOO
     public static final int OPERATOR_SWITCH_4 = 12;
 
     public static final int[] MULTI_TOGGLE = {4, 5};
@@ -333,7 +335,7 @@ public final class Constants {
     public static final double kDriveT =
         SwerveConstants.kDriveGearRatio / DCMotor.getKrakenX60Foc(1).KtNMPerAmp;
     public static final double kSteerP = 400.0;
-    public static final double kSteerD = 20.0; //PID VALUES FROM OG CODE
+    public static final double kSteerD = 20.0; // PID VALUES FROM OG CODE
     public static final double kSteerS = 2.0;
 
     // Odometry-related constants ==================================

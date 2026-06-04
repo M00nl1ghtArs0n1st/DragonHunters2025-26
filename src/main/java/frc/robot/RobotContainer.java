@@ -161,7 +161,8 @@ public class RobotContainer {
         m_vision =
             new Vision(
                 m_drivebase, m_drivebase::addVisionMeasurement, buildVisionIOsReal(m_drivebase));
-        m_flywheel = new Flywheel(new FlywheelIOTalonFX()); // new Flywheel(new FlywheelIOTalonFX());
+        m_flywheel =
+            new Flywheel(new FlywheelIOTalonFX()); // new Flywheel(new FlywheelIOTalonFX());
         m_accel = new Accelerometer(m_imu);
         sweep = null;
         defineAutoCommands();
